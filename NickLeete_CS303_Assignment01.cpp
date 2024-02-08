@@ -2,10 +2,17 @@
 //
 
 #include <iostream>
+#include <fstream>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	ifstream inFile;
+	inFile.open("isbns.txt");
+	if (!inFile.is_open()) {
+		cout << "Could not open \"isbns.txt\"" << endl;
+		return 1;
+	}
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
