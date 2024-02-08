@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>
+#include "functions.h"
 using namespace std;
 
 int main()
@@ -13,6 +15,20 @@ int main()
 		cout << "Could not open \"A1input.txt\"" << endl;
 		return 1;
 	}
+	int arr[100];
+	int arrIndx = 0;
+	string temp;
+	while (!inFile.eof()) {
+		inFile >> temp;
+		arr[arrIndx] = stoi(temp);
+		arrIndx += 1;
+	}
+
+	for (int i = 0; i < size(arr); i++) {
+		cout << arr[i] << endl;
+	}
+
 
 	inFile.close();
+	return 0;
 }
